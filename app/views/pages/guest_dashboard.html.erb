@@ -1,0 +1,31 @@
+<h1>Guest Dashboard</h1>
+
+<h3>Ready for payment</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>End</th>
+      <th>Cost</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @approved_bookings.each do |booking| %>
+    <tr>
+      <td> <%= booking.start_date %></td>
+      <td> <%= booking.end_date %></td>
+      <td> <%= numner_to_currency(booking.room.price) %></td>
+      <td> <%= booking.room.title %></td>
+      <td><%= render 'partials/stripe' %></td>
+    </tr>
+
+    <% end %>
+
+
+  </tbody>
+</table>
+
+<h3>Pending approval</h3>

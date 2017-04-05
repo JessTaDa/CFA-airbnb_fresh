@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Book Now', new_booking_path(room_id: @room.id), class: 'btn btn-primary' %>
+
 <p>
   <strong>Title:</strong>
   <%= @room.title %>
